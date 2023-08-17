@@ -6,7 +6,8 @@ on:
   #   - cron: "0 * * * *"
 
 env:
-  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  SLACK_WEBHOOK: test
+  # SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
 jobs:
   server-monitoring:
@@ -20,3 +21,4 @@ jobs:
         with:
           filename: './json/url.json'
           protocol: 'https'
+          slack: ${{ env.SLACK_WEBHOOK }}
