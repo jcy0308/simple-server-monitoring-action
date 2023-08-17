@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:18-alpine
 
 COPY src /src
 COPY entrypoint.sh /entrypoint.sh
