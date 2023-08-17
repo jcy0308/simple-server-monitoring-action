@@ -1,0 +1,23 @@
+name: simple-server-monitoring
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 * * * *"
+
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+jobs:
+  server-monitoring:
+    runs-on: ubuntu-latest
+    name: server-monitoring using http request
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Check request
+        uses: ./ 
+        with:
+          hostname: 'naver.com'
+          filename: './json/url.json'
+          protocol: 'https'
