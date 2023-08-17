@@ -19,6 +19,6 @@ jobs:
       - name: Check request
         uses: ./  #marketplace에 등록되면 actions/server-monitoring.. 으로 변경
         with:
-          filename: './json/url.json'
+          filename: './urls.json'
           protocol: 'https'
           slack: ${{ env.SLACK_WEBHOOK }}
