@@ -1,9 +1,13 @@
 import superAgent from 'superagent'
-
-export const checker = async (url) => {
+import { slackAlarm } from '../slack/slack.js'
+export const checker = async (url, protocol, slackWebHook) => {
+    const expectedCode = url.status
     try {
-        const res = await superAgent.get(url.host)
-        console.log(res)
+        const res = await superAgent.get(`${protocol}://${url.host}`)
+        console.log(res.statusCode)
+        if( res.statusCode != expectedCode ){
+            await slackAlarm(url.host, slackWebHook)
+        }
     } catch(error) {
         console.log(error)
     }
