@@ -1,3 +1,3 @@
 #!/bin/sh -l
 
-node index.js -filename $1 -protocol $2 -slack $3
+node index.js $1 $2 $3
