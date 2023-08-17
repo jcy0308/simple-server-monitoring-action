@@ -10,9 +10,13 @@ inputs:
     description: 'http or https'
     required: false
     default: 'https'
+  slack:
+    description: 'slack webhook token'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.filename }}
     - ${{ inputs.protocol }}
+    - ${{ inputs.slack }}
