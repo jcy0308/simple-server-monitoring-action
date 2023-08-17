@@ -1,0 +1,18 @@
+# action.yml
+name: 'Check Server'
+description: 'Check URLs from a JSON file'
+inputs:
+  filename:
+    description: 'Filename of the JSON file'
+    required: false
+    default: './urls.json'
+  protocol:
+    description: 'http or https'
+    required: false
+    default: 'https'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.filename }}
+    - ${{ inputs.protocol }}
