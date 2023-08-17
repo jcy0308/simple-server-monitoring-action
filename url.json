@@ -1,0 +1,7 @@
+[
+    {
+        "host":"naver.com",
+        "method" : "GET",
+        "status": "200"
+    }
+]
