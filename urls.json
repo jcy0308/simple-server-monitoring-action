@@ -8,5 +8,14 @@
         "host":"google.com",
         "method" : "GET",
         "status": "200"
+    },
+    {
+        "host":"google.com",
+        "method": "POST",
+        "status": "201",
+        "body": {
+            "id":"admin",
+            "password":"1234"
+        }
     }
 ]
