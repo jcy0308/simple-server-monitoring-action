@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';
 
-export const slackAlarm = async (host, slackWebHook, statusCode) => {
+export const slackAlarm = async (host, slackWebHook, expectedStatusCode, resStatuscode) => {
     try {
         // Slack에 보낼 메시지 생성
-        const message = `🚨 Alert | ${host}\nStatus Code: ${statusCode}\nPlease check as soon as possible!`; 
+        const message = `🚨 Alert | ${host}\nExpected Status Code: ${expectedStatusCode}\nBut got: ${resStatuscode}\nPlease check as soon as possible!`; 
 
         const response = await fetch(slackWebHook, {
             method: 'POST',
