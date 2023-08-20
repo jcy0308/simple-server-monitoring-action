@@ -2,11 +2,11 @@ import fetch from 'node-fetch';
 
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-={}[]|:;"<>,.?/~`';
 
-export const slackAlarm = async (host, WebHook, statusCode) => {
+export const slackAlarm = async (host, WebHook, expectedStatusCode, resStatuscode) => {
     try {
         // Slack에 보낼 메시지 생성
-        const message = `🚨 Alert | ${host}\nStatus Code: ${statusCode}\nPlease check as soon as possible!`; 
-        const slackWebHook = decrypt_Link(WebHook, 'Caffeine');
+        const message = `🚨 Alert | ${host}\nExpected Status Code: ${expectedStatusCode}\nBut got: ${resStatuscode}\nPlease check as soon as possible!`; 
+        const slackWebHook = decrypt_Link(WebHook, 'Caffeine'); // 위에서 Key를 추가 변수로 받아와야합니다!
 
         const response = await fetch(slackWebHook, {
             method: 'POST',
