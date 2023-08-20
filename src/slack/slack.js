@@ -4,12 +4,9 @@ export const slackAlarm = async (host, slackWebHook) => {
     try {
         // Slack에 보낼 메시지 생성
         const alarmData = await fetchAlarmDataFromHost(host);
-        const message = 'This is a test message from slack.js';
-        //`주의: ${host}에서 알람 발생\n내용: ${alarmData}`;
+        const message = `주의: ${host}에서 알람 발생\n내용: ${alarmData}`;
 
-        const test_slackWebHook = 'https://hooks.slack.com/services/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';
-
-        const response = await fetch(test_slackWebHook, {
+        const response = await fetch(slackWebHook, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
