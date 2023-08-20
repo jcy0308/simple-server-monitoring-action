@@ -16,9 +16,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install node-fetch
       - name: Check request
-        uses: ./  #marketplace에 등록되면 actions/server-monitoring.. 으로 변경
+        uses: ./ #marketplace에 등록되면 actions/server-monitoring.. 으로 변경
         with:
-          filename: './urls.json'
-          protocol: 'https'
+          filename: "./urls.json"
+          protocol: "https"
           slack: ${{ env.SLACK_WEBHOOK }}
