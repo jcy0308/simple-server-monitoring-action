@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+import fetch from 'node-fetch';
 
 export const slackAlarm = async (host, slackWebHook) => {
     try {
