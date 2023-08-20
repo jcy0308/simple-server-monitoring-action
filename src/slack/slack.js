@@ -3,8 +3,8 @@ import fetch from 'node-fetch';
 export const slackAlarm = async (host, slackWebHook) => {
     try {
         // Slack에 보낼 메시지 생성
-        const alarmData = await fetchAlarmDataFromHost(host);
-        const message = `주의: ${host}에서 알람 발생\n내용: ${alarmData}`;
+        const alarmData = 'Status Code';
+        const message = `주의: ${host}에서 알람 발생\n내용: ${alarmData}`; // alarmData를 checker로부터 넘겨받기
 
         const response = await fetch(slackWebHook, {
             method: 'POST',
@@ -24,11 +24,4 @@ export const slackAlarm = async (host, slackWebHook) => {
     } catch (error) {
         console.error('Slack 메시지 전송 중 오류가 발생했습니다:', error);
     }
-};
-
-// 호스트에서 알람 데이터를 가져오는 가정한 함수
-const fetchAlarmDataFromHost = async (host) => {
-    // 실제로는 호스트에서 데이터를 가져오는 로직을 구현해야 합니다.
-    // 이 함수는 예시를 위해 임의의 데이터를 반환합니다.
-    return '임의의 알람 데이터';
 };
