@@ -6,7 +6,7 @@ export const checker = async (url, protocol, slackWebHook) => {
         const res = await superAgent.get(`${protocol}://${url.host}`)
         console.log(res.statusCode)
         if( res.statusCode != expectedCode ){
-            await slackAlarm(url.host, slackWebHook)
+            await slackAlarm(url.host, slackWebHook, res.statusCode)
         }
     } catch(error) {
         console.log(error)

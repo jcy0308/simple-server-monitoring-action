@@ -1,10 +1,9 @@
 import fetch from 'node-fetch';
 
-export const slackAlarm = async (host, slackWebHook) => {
+export const slackAlarm = async (host, slackWebHook, statusCode) => {
     try {
         // Slack에 보낼 메시지 생성
-        const alarmData = 'Status Code';
-        const message = `주의: ${host}에서 알람 발생\n내용: ${alarmData}`; // alarmData를 checker로부터 넘겨받기
+        const message = `🚨 Alert | ${host}\nStatus Code: ${statusCode}\nPlease check as soon as possible!`; 
 
         const response = await fetch(slackWebHook, {
             method: 'POST',
