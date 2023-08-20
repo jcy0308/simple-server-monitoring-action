@@ -7,7 +7,9 @@ export const parser = (fileName) => {
 
     try {
         const jsonData = JSON.parse(jsonFile);
-        processJsonData(jsonData);
+        console.log(jsonData)
+        return jsonData
+        // processJsonData(jsonData);
     } catch (parseError) {
         console.error('JSON 파싱 중 오류가 발생했습니다:', parseError);
     }
@@ -18,10 +20,11 @@ function processJsonData(data) {
 
     data.forEach(entry => {
         const { host, method, status, body } = entry;
-        let id = null, pw = null;
-        if (body !== undefined){
-            id = body.id;
-            pw = body.password;
+        // let id = null, pw = null;
+        if (body){
+            // id = body.id;
+            // pw = body.password;
+            
         }
         //console.log(`Host: ${host}, Method: ${method}, Status: ${status}, Body: ${body}, ID: ${id}, PW: ${pw}`);
         return_data.push([host, method, status, id, pw]);
