@@ -42,6 +42,7 @@ Therefore, using GitHub Actions to periodically send requests to the server and 
  -  To reduce the Docker image size, we choosed an ultra-light Alpine image instead of the standard Node image. While the base Node image is around 950MB for Node 18, the Alpine image weighs in at approximately 178MB. 
  
  - Additionally, we minimized dependencies to decrease installation time during execution. Here is most popular http request library in npm
+   
 | **library** | **weekly-download** | **bundle-size** | **avg-request-time** |
 |:-----------:|:-------------------:|:---------------:|:--------------------:|
 |   request   |      19,535,286     |      209KB      |         0.92         |
