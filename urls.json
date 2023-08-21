@@ -10,12 +10,8 @@
         "status": "200"
     },
     {
-        "host":"google.com",
-        "method": "POST",
-        "status": "201",
-        "body": {
-            "id":"admin",
-            "password":"1234"
-        }
+        "host":" https://dh3l7rb37f.execute-api.ap-northeast-2.amazonaws.com/default/simple-server-monitoring-action-exampe",
+        "method": "GET",
+        "status": "200"
     }
 ]
