@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Check request
-        uses: jcy0308/simple-server-monitoring-action
+        uses: jcy0308/simple-server-monitoring-action@1.0.0
         with:
           filename: './urls.json'
           protocol: 'https'
