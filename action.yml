@@ -11,8 +11,11 @@ inputs:
     required: false
     default: 'https'
   slack:
-    description: 'slack webhook token'
+    description: 'slack webhook token inside github secret'
     required: true
+  reposlack:
+    description: 'slack webhook token inside repo'
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -20,3 +23,4 @@ runs:
     - ${{ inputs.filename }}
     - ${{ inputs.protocol }}
     - ${{ inputs.slack }}
+    - ${{ inputs.reposlack }}
