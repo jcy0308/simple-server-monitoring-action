@@ -91,4 +91,4 @@ This Action uses these environment variables
 
 If you directly upload a Slack URL to a GitHub repository, Slack might detect it as potentially compromised and invalidate the existing URL, generating a new one. Therefore, if you want to include a URL in your repository, you can encode it first and then include it in the action.yml file. The decoding process will be implemented within the action itself.
 
-You can perform the encoding right [here](ttps://bsstayo.github.io/GitHub-Summer-Assignment/Crypto/index). Please provide the Slack URL you'd like to encode, and I'll help you with the encoding process.
+You can perform the encoding right [here](https://bsstayo.github.io/GitHub-Summer-Assignment/Crypto/index). Please provide the Slack URL you'd like to encode, and I'll help you with the encoding process.
