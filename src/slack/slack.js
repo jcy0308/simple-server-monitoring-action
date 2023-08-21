@@ -6,8 +6,12 @@ export const slackAlarm = async (host, WebHook, expectedStatusCode, resStatuscod
     try {
         // Slack에 보낼 메시지 생성
         const message = `🚨 Alert | ${host}\nExpected Status Code: ${expectedStatusCode}\nBut got: ${resStatuscode}\nPlease check as soon as possible!`; 
-        const slackWebHook = decrypt_Link(WebHook, 'Caffeine'); // 위에서 Key를 추가 변수로 받아와야합니다!
-
+        if(WebHook.isRepoUrl === true) {
+            const slackWebHook = decrypt_Link(WebHook, 'Caffeine'); // 위에서 Key를 추가 변수로 받아와야합니다!
+        }
+        else {
+            const slackWebHook = WebHook.slackWebHook
+        }
         const response = await fetch(slackWebHook, {
             method: 'POST',
             headers: {
@@ -51,4 +55,11 @@ function decrypt_Link(encryptedLink, key){
     return decryptLink;
 }
 
-// slackAlarm('test', 'j){_-Xkbj%)^-d"^c2^a6-}bu4-[#!*-`t"?tiAlUxh3bj`.Phqz`CDh`ty)z/~[W110,=C(h>yl};]?y', 200)
+export class SlackUrl {
+    slackWebUrl
+    isRepoUrl
+    constructor(WebHook) {
+        this.isRepoUrl = false
+        this.slackWebUrl = WebHook
+    }
+}
