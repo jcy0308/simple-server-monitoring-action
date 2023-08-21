@@ -53,6 +53,7 @@ Therefore, using GitHub Actions to periodically send requests to the server and 
 
  - We choosed the npm-fetch-api over the request library to achieve the smallest bundle size while maintaining reasonable request delay.
 
+* There are APIs that support both HTTP and HTTPS requests, as well as APIs that only accept either HTTP or HTTPS. Especially in cloud service environments, allows https protocol only. Therefore, we have set HTTPS as the default request, and by configuring environment variables, we have enabled sending requests using HTTP as well
 ## Requirements
 
 - A `SLACK_WEBHOOK` URL to send a message when something goes wrong 
@@ -80,7 +81,9 @@ Therefore, using GitHub Actions to periodically send requests to the server and 
     }
 ]
 ```
-
+## Supported REST API
+ 
+- GET POST DELETE PUT
 ## Environment Variables
 
 This Action uses these environment variables
