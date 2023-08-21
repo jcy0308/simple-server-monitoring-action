@@ -16,6 +16,9 @@ inputs:
   reposlack:
     description: 'slack webhook token inside repo'
     required: false
+branding:
+  icon: 'airplay'
+  color: 'blue'
 runs:
   using: 'docker'
   image: 'Dockerfile'
