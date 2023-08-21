@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm install node-fetch
       - name: Check request
-        uses: ./ #marketplace에 등록되면 actions/server-monitoring.. 으로 변경
+        uses: jcy0308/simple-server-monitoring-action@1.0.0
         with:
           filename: "./urls.json"
           protocol: "https"
