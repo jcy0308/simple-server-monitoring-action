@@ -10,7 +10,7 @@
         "status": "200"
     },
     {
-        "host":"",
+        "host":"dh3l7rb37f.execute-api.ap-northeast-2.amazonaws.com/default/simple-server-monitoring-action-exampe",
         "method": "GET",
         "status": "200"
     }
