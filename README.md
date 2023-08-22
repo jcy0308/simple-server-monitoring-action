@@ -25,6 +25,7 @@ jobs:
           filename: './urls.json'
           protocol: 'https'
           slack: ${{ env.SLACK_WEBHOOK }}
+          reposlack: 'encoded url'
 ```
 
 ## Description
