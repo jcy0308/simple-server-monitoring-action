@@ -7,7 +7,7 @@ on:
 
 env:
   SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  REPO_SLACK_WEBHOOK : 'j){_-Xkbj%)^-d"^c2^a6-}bu4-[#!*-`t"?tiAlUxh3bj`.Phqz`CDh`16"j$x?5h,lh(8kr<8^,[H#j'  #optional env
+  REPO_SLACK_WEBHOOK : 'j){_-Xkbj%)^-d"^c2^a6-}bu4-[#!*-`t"?tiAlUxh3bj`.P<p.qBFo`_$@_/#wil>xq3;yn-6;-ku,O'  #optional env
 jobs:
   server-monitoring:
     runs-on: ubuntu-latest
