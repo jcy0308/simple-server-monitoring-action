@@ -5,12 +5,13 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 export const slackAlarm = async (host, WebHook, expectedStatusCode, resStatuscode) => {
     try {
         // Slack에 보낼 메시지 생성
+        let slackWebHook
         const message = `🚨 Alert | ${host}\nExpected Status Code: ${expectedStatusCode}\nBut got: ${resStatuscode}\nPlease check as soon as possible!`; 
         if(WebHook.isRepoUrl === true) {
-            const slackWebHook = decrypt_Link(WebHook, 'Caffeine'); // 위에서 Key를 추가 변수로 받아와야합니다!
+            slackWebHook = decrypt_Link(WebHook.slackWebUrl, 'Caffeine'); // 위에서 Key를 추가 변수로 받아와야합니다!
         }
         else {
-            const slackWebHook = WebHook.slackWebHook
+            slackWebHook = WebHook.slackWebUrl
         }
         const response = await fetch(slackWebHook, {
             method: 'POST',
